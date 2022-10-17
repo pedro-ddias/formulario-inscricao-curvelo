@@ -16,6 +16,12 @@ body{
     padding: 20px;
     min-height: 100vh;
 }
+.span-required{
+    display: none;
+    margin-left: 10px;
+    color: #e63636;
+    font-size: 15px;
+}
 .w50{
     width: 50%;
     float: left;
