@@ -10,26 +10,6 @@
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Modal -->
-
     <div class="box">
         <div class="img-box">
             <img src="img-formulario.png">
@@ -59,8 +39,7 @@
                     <span class="span-required">Digite um telefone válido</span>
                 </div>
 
-                <!-- Button trigger modal -->
-                <div class="input-group"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="input-group">
                     <button>Inscrever</button>
                 </div>
 
@@ -69,9 +48,13 @@
     </div>
 </body>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
 <!-- JS para validar campos -->
 <script src="/validar.js"></script>
-
 <!-- JS para mascaras importadas -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
