@@ -34,7 +34,7 @@
 
                 <div class="input-group">
                     <label for="telefone">Telefone</label>
-                    <input class="required" type="tel" id="telefone" placeholder="Digite o seu telefone celular"
+                    <input class="required" type="tel" id="telefone" placeholder="Digite o seu telefone"
                         oninput="telefoneValidate()" required>
                     <span class="span-required">Digite um telefone válido</span>
                 </div>
@@ -48,23 +48,44 @@
     </div>
 </body>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-</button>
-
-<!-- JS para validar campos -->
-<script src="/validar.js"></script>
-<!-- JS para mascaras importadas -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
-<!-- bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-    crossorigin="anonymous"></script>
+<script>
+    const form = document.getElementById('form');
+    const campos = document.querySelectorAll('.required');
+    const spans = document.querySelectorAll('.span-required');
+    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+    $(document).ready(function () {
+        $("#telefone").mask("(99) 99999-9999");
+
+    });
+
+    function setError(index) {
+        campos[index].style.border = '2px solid #e63636'
+        spans[index].style.display = 'block';
+    }
+    function removeError(index) {
+        campos[index].style.border = '';
+        spans[index].style.display = 'none';
+    }
+
+    function nameValidate() {
+        if (campos[0].value.length < 3) {
+            setError(0);
+        } else {
+            removeError(0);
+        }
+    }
+    function emailValidate() {
+        if (!emailRegex.test(campos[1].value)) {
+            setError(1);
+        } else {
+            removeError(1);
+        }
+    }
+
+</script>
 
 </html>
