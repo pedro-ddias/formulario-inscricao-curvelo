@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Formulario responsivo com html e css</title>
+
+    <!-- Mascaras Telefone -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
 </head>
 
 <body>
@@ -48,44 +53,6 @@
     </div>
 </body>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-
-<script>
-    const form = document.getElementById('form');
-    const campos = document.querySelectorAll('.required');
-    const spans = document.querySelectorAll('.span-required');
-    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-
-    $(document).ready(function () {
-        $("#telefone").mask("(99) 99999-9999");
-
-    });
-
-    function setError(index) {
-        campos[index].style.border = '2px solid #e63636'
-        spans[index].style.display = 'block';
-    }
-    function removeError(index) {
-        campos[index].style.border = '';
-        spans[index].style.display = 'none';
-    }
-
-    function nameValidate() {
-        if (campos[0].value.length < 3) {
-            setError(0);
-        } else {
-            removeError(0);
-        }
-    }
-    function emailValidate() {
-        if (!emailRegex.test(campos[1].value)) {
-            setError(1);
-        } else {
-            removeError(1);
-        }
-    }
-
-</script>
+<script src="/validar.js"> </script>
 
 </html>
