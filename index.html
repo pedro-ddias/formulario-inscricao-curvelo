@@ -69,19 +69,19 @@
                 <div class="input-group">
                     <label for="email">E-mail</label>
                     <input class="required" type="email" id="email" placeholder="Digite o seu email"
-                        oninput="emailValidate()" required>
+                        oninput="emailValidate()" onchange="habilitaBotao()" required>
                     <span class="span-required">Digite um e-mail válido</span>
                 </div>
 
                 <div class="input-group">
                     <label for="telefone">Telefone</label>
                     <input class="required" type="tel" id="telefone" placeholder="Digite o seu telefone"
-                        oninput="telefoneValidate()" required>
+                        oninput="telefoneValidate()" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" onchange="habilitaBotao()" required>
                     <span class="span-required">Digite um telefone válido</span>
                 </div>
 
                 <button type="button" id="button-inscrever" class="btn btn input-group" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                    data-bs-target="#staticBackdrop" disabled>
                     Inscrever
                 </button>
 
